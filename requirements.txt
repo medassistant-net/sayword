@@ -1,2 +1,4 @@
 mkdocs-material
 mkdocs-rss-plugin
+mkdocs-glightbox
+mkdocs-static-i18n
