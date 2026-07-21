@@ -1,6 +1,6 @@
 site_name: Sayword Dev Blog
-site_url: https://medassistant-net.github.io/sayword.github.io/
-repo_url: https://github.com/medassistant-net/sayword.github.io
+site_url: https://medassistant-net.github.io/sayword/
+repo_url: https://github.com/medassistant-net/sayword
 
 theme:
   name: material
