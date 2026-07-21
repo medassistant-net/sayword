@@ -14,7 +14,7 @@ signed and Apple-notarized `.pkg` installer now does it for you.
 - The old manual wef-folder-copy method still works and is documented as a fallback.
 - This build also carries manifest 1.1.1, with a corrected ribbon icon.
 
-[Download the installer](https://github.com/medassistant-net/sayword-word-addin/releases/tag/v1.1.1)
+[Download the installer](https://github.com/medassistant-net/sayword/releases/tag/word-addin-v1.1.1)
 · see the [installation guide](../howtos/2026-07-21-word-addin-installation.md) for the
 full Mac walkthrough (Method A).
 

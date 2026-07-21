@@ -18,7 +18,7 @@
   запасной вариант.
 - В этой сборке также обновлён манифест до версии 1.1.1 — исправлена иконка на ленте.
 
-[Скачать установщик](https://github.com/medassistant-net/sayword-word-addin/releases/tag/v1.1.1)
+[Скачать установщик](https://github.com/medassistant-net/sayword/releases/tag/word-addin-v1.1.1)
 · полная инструкция по установке на Mac (способ A) — в
 [руководстве по установке](../howtos/2026-07-21-word-addin-installation.md).
 

@@ -73,7 +73,7 @@
     Подписанный и заверенный Apple (notarized) установщик сам кладёт манифест в нужную
     папку и перезапускает Word — пароль администратора не требуется.
 
-    1. Скачайте [sayword-addin-macos-v1.1.1.zip](https://github.com/medassistant-net/sayword-word-addin/releases/download/v1.1.1/sayword-addin-macos-v1.1.1.zip)
+    1. Скачайте [sayword-addin-macos-v1.1.1.zip](https://github.com/medassistant-net/sayword/releases/download/word-addin-v1.1.1/sayword-addin-macos-v1.1.1.zip)
        и распакуйте архив.
     2. Дважды нажмите на `sayword-installer.pkg` и пройдите шаги **Продолжить →
        Установить**. Установка идёт в вашу пользовательскую папку — пароль
