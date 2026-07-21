@@ -29,8 +29,6 @@ a bolted-on panel.
 - **Refreshed branding.** The ribbon button now carries the real sayword.ai mic icon instead
   of the default Office add-in placeholder.
 
-![Verify Report — actionable issue list, light and dark theme](../assets/images/word-addin/verify-redesign-themes.png)
-
 Setup hasn't changed — see the [installation guide](../howtos/2026-07-21-word-addin-installation.md)
 if you haven't installed the add-in yet.
 
