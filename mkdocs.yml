@@ -1,0 +1,40 @@
+site_name: Sayword Dev Blog
+site_url: https://medassistant-net.github.io/sayword.github.io/
+repo_url: https://github.com/medassistant-net/sayword.github.io
+
+theme:
+  name: material
+  palette:
+    - scheme: default
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - scheme: slate
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  features:
+    - navigation.tabs
+    - navigation.top
+    - search.suggest
+    - content.code.copy
+
+nav:
+  - Home: index.md
+  - Changelog: changelog/index.md
+  - How-tos: howtos/index.md
+  - Notes: notes/index.md
+
+plugins:
+  - search
+  - rss:
+      match_path: "changelog/.*"
+      date_from_meta:
+        as_creation: date
+
+markdown_extensions:
+  - admonition
+  - pymdownx.superfences
+  - pymdownx.tabbed
+  - toc:
+      permalink: true
