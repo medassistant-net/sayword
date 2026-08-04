@@ -41,4 +41,6 @@ installs without an internet connection.
 
 Install guide (RU): [Протоколы — установка и работа](../howtos/2026-08-02-protocols-installation.md)
 
+Built a catalog on an older version and seeing thousands of reports in the manual review queue, or meaningless category names? [How to rebuild it without losing your work (RU)](../howtos/2026-08-04-protocols-fresh-start.md)
+
 Feedback: [saywordai@gmail.com](mailto:saywordai@gmail.com).
