@@ -72,10 +72,10 @@ The ready-made wordings live in two separate bases, one for CT and one for MRI. 
 reads differently in each, and substituting one for the other is not acceptable. Which base to
 use is decided automatically, in this order:
 
-1. **The modality set in your connection's settings.** A radiologist usually works one modality,
-   and saying so once is the most reliable option: every command is then unambiguous, including
-   on an empty, freshly opened document. If you read only CT or only MRI, write to us and we will
-   set it.
+1. **The modality chosen in settings.** A radiologist usually works one modality, and choosing
+   it once is the most reliable option: every command is then unambiguous, including on an empty,
+   freshly opened document. A modality selector is coming to the app's settings; until then,
+   write to us and we will set it for your connection.
 2. **The modality named in the report text.** With nothing set, the system reads the document you
    are working in.
 3. **With nothing to go on, the fast substitution does not run** and the command takes the long
@@ -157,5 +157,16 @@ And the rule that changes neither with the mode nor with the version: **responsi
 content of the report stays with the doctor.** The system prepares the text; the doctor signs
 it.
 
-Try it and tell us what does not work: [saywordai@gmail.com](mailto:saywordai@gmail.com). A
-command that was refused where it should have worked is the most useful thing you can send us.
+## If something goes wrong
+
+The task pane has a **Report an issue** button — use it rather than your memory: pressed right
+after a command that misfired, it attaches the recognised fragment and the last minute of audio,
+so we can see what you actually said.
+
+One thing it needs from you. What gets attached is what you **said**, not what the system did
+with it. So add a line in the comment field about what you expected and what happened: "expected
+the last sentence to be deleted — the whole paragraph was rewritten." Two lines are enough, and
+they are what turns a report into a fixable defect.
+
+A command that was refused where it should have worked is the most useful thing you can send us.
+If email is easier: [saywordai@gmail.com](mailto:saywordai@gmail.com).
