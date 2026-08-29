@@ -81,22 +81,22 @@ pieces are written, and the editor's buttons are moving onto them.
 **The desktop app is coming too.** There, command mode will be insert-only: by design the
 desktop app does not read the document you are working in, and that constraint stays.
 
-## About our report corpora — please read
+## About our template corpora — please read
 
-Everything above rests on our corpora of reports. They deserve a plain description.
+Everything above rests on our corpora of templates. They deserve a plain description.
 
 - **These are experimental stores.** They were assembled to test a hypothesis — that the system
   can be taught to write in the house style by being shown how the house writes. The hypothesis
   is holding up, but the state of the corpora is working, not final.
-- **The corpus is not built from your dictations.** It is an archive of finished reports, not
-  what you dictated into sayword.ai: dictated text and audio are not stored and never enter the
-  corpus. Every report passes an automatic personal-data check before it can go in; the ones the
-  check flags stay out until a person has reviewed them. Dates are generalised and file names
-  hashed.
-- **The reports in them vary in quality.** The corpus is drawn from a real archive, and a real
-  archive is uneven: an exemplary description sits next to a careless one. Selection is
+- **The corpus is not built from your dictations.** It is an archive of anonymised templates
+  spanning a range of pathologies and study areas, not what you dictated into sayword.ai:
+  dictated text and audio are not stored and never enter the corpus. Every template passes an
+  automatic personal-data check before it can go in; the ones the check flags stay out until a
+  person has reviewed them. Dates are generalised and file names hashed.
+- **The templates in them vary in quality.** The archive comes out of real practice and is
+  uneven for that reason: an exemplary description sits next to a careless one. Selection is
   automatic and formal, and it cannot tell good from merely usual.
-- **No report has been reviewed by a doctor.** No anatomical area has been signed off by a
+- **No template has been reviewed by a doctor.** No anatomical area has been signed off by a
   radiologist yet. That is why, wherever text comes from the corpus, the client shows a badge:
   **provisional wording, not confirmed by a radiologist**. Hiding it would be dishonest — it is
   the only way to tell what has been reviewed from what a machine picked out.
