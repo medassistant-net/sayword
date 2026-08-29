@@ -2,15 +2,13 @@
 
 **2026-08-29**
 
-Until now, your voice did one thing in sayword.ai: it turned speech into text. Everything else —
-moving a paragraph, cutting a sentence, inserting an organ's normal finding — stayed manual.
-
-The Word add-in now has a second mode. In it you say not the text but **what to do with the
-document**, and the document changes on its own.
+The Word add-in has two dictation modes. In **Dictate**, what you say becomes report text. In
+**Command**, you say not the text but **what to do with the document** — move a paragraph, cut a
+sentence, insert an organ's normal finding — and the document changes on its own.
 
 ## Turning it on
 
-Next to the record button there is now a switch: **Dictate** and **Command**.
+Next to the record button there is a switch: **Dictate** and **Command**.
 
 1. Switch to Command **before** you start recording — the switch is locked while recording, so
    it cannot cut off what you have already said.
@@ -68,6 +66,23 @@ The order changes; the content does not.
 This is the only case where the system may change markup — when you explicitly ask. Everywhere
 else it preserves it.
 
+## CT and MRI: which base of wordings is used
+
+The ready-made wordings live in two separate bases, one for CT and one for MRI. A normal finding
+reads differently in each, and substituting one for the other is not acceptable. Which base to
+use is decided automatically, in this order:
+
+1. **The modality set in your connection's settings.** A radiologist usually works one modality,
+   and saying so once is the most reliable option: every command is then unambiguous, including
+   on an empty, freshly opened document. If you read only CT or only MRI, write to us and we will
+   set it.
+2. **The modality named in the report text.** With nothing set, the system reads the document you
+   are working in.
+3. **With nothing to go on, the fast substitution does not run** and the command takes the long
+   road: slower, but not a guess. That happens on an empty document, or when the text mentions
+   both modalities — a comparison with a prior study of the other kind, say. The system will not
+   choose in that situation.
+
 ## Five rules worth knowing
 
 These are not about the interface but about how the system reasons. Knowing them, you will phrase
@@ -106,39 +121,30 @@ Better to read this now than to conclude something is broken later.
   document ("not enlarged", "unremarkable"), the system will not guess which one. Select the
   right spot and repeat.
 - **A positional reference with no selection gets a question.** See rule 1.
-- **Two requests in one utterance** ("add spleen normal and format the rest") will be carried
-  out, but more slowly: the fast path is not built for that, and the whole utterance takes the
-  long road. Previously the second half was silently dropped — that was the real problem, and it
-  is gone.
+- **Two requests in one utterance** ("add spleen normal and format the rest") are both carried
+  out, but more slowly: the fast substitution is not built for that, and the whole utterance
+  takes the long road.
 - **The web editor and the desktop app are coming.** In the desktop app command mode will be
   insert-only: by design it does not read the document you are working in, and that constraint
   stays.
 
-## Why we built it
+## What it rests on
 
-Four goals, and an honest account of each.
+Three things explain almost all of command mode's behaviour.
 
-**Let the voice steer the document, not only fill it.** No client of ours had this before. The
-Word add-in has it now.
+**The wordings live in a corpus of reports, not inside the program.** That is why they are shared
+across all our applications and can be extended without updating the add-in: as the corpus grows,
+"insert <organ>, normal" starts answering where there was nothing to answer with. Today 80
+area-and-organ combinations out of 120 are covered in the CT base, and 62 out of 75 in the MRI
+base.
 
-**Get the knowledge of normal findings out of the code.** Normal-finding wordings used to be
-written into the program itself: they could not be extended without shipping a new version, and
-the rest of the product could not see them. They now live in the corpus of reports — shared
-across clients and extensible without an app update. After the very first rebuild of the corpus,
-coverage went from 25 area-and-organ combinations to 80 for CT, and from 11 to 62 for MRI;
-"insert bronchi, normal" worked for the first time.
+**Inserting a normal finding is substitution, not composition.** The ready text is taken from the
+corpus as it stands, which is why it arrives instantly. Everything else — transformations,
+deletions, reordering — requires understanding the utterance and takes a few seconds.
 
-**Make the most frequent command instant.** Done: inserting a normal finding answers
-immediately, with no trip to the AI. As a side effect, seconds are no longer spent on hopeless
-cases — "insert liver, normal" used to think for eight seconds before answering "please
-clarify"; now it answers at once and says why.
-
-**Don't damage the document quietly.** This turned out to be the most important one. The first
-live test was brutal: a radiologist dictated five commands he would say without thinking, and
-four of the five came back "an error occurred". All five work now. But the lesson of that session
-was not that five commands got fixed — it was what the default behaviour has to be: **a refusal
-beats a silent mistake.** A command it cannot resolve is not guessed at; the system asks. You see
-a refusal immediately; a quietly mangled paragraph you find a week later.
+**A refusal beats a silent mistake.** A command it cannot resolve is not guessed at: the system
+asks, and says what exactly is unclear. You see a refusal immediately; a quietly mangled
+paragraph you find a week later.
 
 ## About the "provisional wording" badge
 
