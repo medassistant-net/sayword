@@ -88,6 +88,11 @@ Everything above rests on our corpora of reports. They deserve a plain descripti
 - **These are experimental stores.** They were assembled to test a hypothesis — that the system
   can be taught to write in the house style by being shown how the house writes. The hypothesis
   is holding up, but the state of the corpora is working, not final.
+- **The corpus is not built from your dictations.** It is an archive of finished reports, not
+  what you dictated into sayword.ai: dictated text and audio are not stored and never enter the
+  corpus. Every report passes an automatic personal-data check before it can go in; the ones the
+  check flags stay out until a person has reviewed them. Dates are generalised and file names
+  hashed.
 - **The reports in them vary in quality.** The corpus is drawn from a real archive, and a real
   archive is uneven: an exemplary description sits next to a careless one. Selection is
   automatic and formal, and it cannot tell good from merely usual.
@@ -105,5 +110,9 @@ Everything above rests on our corpora of reports. They deserve a plain descripti
 
 All of which comes down to one practical rule, unchanged: **responsibility for the content of a
 report stays with the doctor.** The system prepares the text; the doctor signs it.
+
+That covers where the text comes from. How the data you send us is processed — where speech
+recognition runs, and what that means for 152-ФЗ and medical confidentiality — is the subject of
+a separate standing disclaimer published in the community channel. It remains in force in full.
 
 Feedback: [saywordai@gmail.com](mailto:saywordai@gmail.com).
