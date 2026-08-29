@@ -1,15 +1,12 @@
 # Command Mode: Your Voice Can Now Edit, Not Just Dictate
 
-**2026-08-29** · Article 1 of 3
+**2026-08-29**
 
 Until now, your voice did one thing in sayword.ai: it turned speech into text. Everything else —
 moving a paragraph, cutting a sentence, inserting an organ's normal finding — stayed manual.
 
 The Word add-in now has a second mode. In it you say not the text but **what to do with the
 document**, and the document changes on its own.
-
-This is the first of three articles. August brought a lot of change, and dumping all of it at
-once would not respect your time. We start with what you can try today.
 
 ## Turning it on
 
@@ -153,14 +150,6 @@ by area — with no app update.
 And the rule that changes neither with the mode nor with the version: **responsibility for the
 content of the report stays with the doctor.** The system prepares the text; the doctor signs
 it.
-
-## Later in this series
-
-- **Article 2 — how the system knows "how it is done here."** Why a generated conclusion used to
-  run four times longer than yours, and what changed when every anatomical area got a style of
-  its own.
-- **Article 3 — your own reports.** The Протоколы app, building a corpus from your own archive,
-  and how you can take part.
 
 Try it and tell us what does not work: [saywordai@gmail.com](mailto:saywordai@gmail.com). A
 command that was refused where it should have worked is the most useful thing you can send us.
