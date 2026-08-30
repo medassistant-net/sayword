@@ -20,11 +20,15 @@ sentence, insert an organ's normal finding — and the document changes on its o
 
 Next to the record button there is a switch: **Dictate** and **Command**.
 
+![The sayword.ai task pane in Word: the Dictate / Command switch, with Command selected](../assets/images/word-addin/command-mode-toggle.png)
+
 1. Switch to Command **before** you start recording — the switch is locked while recording, so
    it cannot cut off what you have already said.
 2. Press record and speak the command in your normal voice.
 3. Stop talking. After a couple of seconds the command runs; a countdown on screen says
    "Running the command in N s — keep talking to add to it."
+
+![Recording in progress: the live transcription shows the utterance «Разверни описание», with the countdown to running the command below it; on the left, the selected fragment in the document it applies to](../assets/images/word-addin/command-mode-countdown.png)
 
 That last point matters more than it looks. The pause is not a patience timer but a way to
 extend what you said: while you speak, the countdown resets. Change your mind halfway through —
