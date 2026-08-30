@@ -164,9 +164,11 @@ paragraph you find a week later.
 
 ## About the "provisional wording" badge
 
-Wherever inserted text came from the corpus, you will see a badge: **provisional wording, not
-confirmed by a radiologist**. The corpus was selected automatically, and no anatomical area has
-been signed off by a doctor yet. As doctors work through the base, the badge will disappear area
+When inserted text comes from the corpus, a badge appears in the task pane: **provisional
+wording, not confirmed by a radiologist**. The corpus was selected automatically, and no
+anatomical area has been signed off by a doctor yet.
+
+![The task pane showing a red badge, «Черновая формулировка — не подтверждена врачом», below the recording status line](../assets/images/word-addin/command-mode-provisional-badge.png) As doctors work through the base, the badge will disappear area
 by area — with no app update.
 
 And the rule that changes neither with the mode nor with the version: **responsibility for the
@@ -179,8 +181,11 @@ The task pane has a **Report an issue** button — use it rather than your memor
 after a command that misfired, it attaches the recognised fragment and the last minute of audio,
 so we can see what you actually said.
 
+![The Report an issue dialog: a choice of reasons, a comment field, the attached minute of audio, and the list of what is sent with the report](../assets/images/word-addin/report-issue-dialog.png)
+
 One thing it needs from you. What gets attached is what you **said**, not what the system did
-with it. So add a line in the comment field about what you expected and what happened: "expected
+with it — the dialog header will say the report is about dictation even when you are reporting a
+command that misfired. So add a line in the comment field about what you expected and what happened: "expected
 the last sentence to be deleted — the whole paragraph was rewritten." Two lines are enough, and
 they are what turns a report into a fixable defect.
 
