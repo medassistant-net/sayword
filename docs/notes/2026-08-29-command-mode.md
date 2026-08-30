@@ -2,6 +2,16 @@
 
 **2026-08-29**
 
+!!! warning "Early preview"
+
+    Command mode is open as a preview. It works, but not always: some commands behave
+    differently from what is described below, and some come back with an error. We keep it open
+    precisely so that you run into that and tell us — real dictated commands show what ours
+    never do. The phrasings and the behaviour will change.
+
+    Report a problem with the **Report an issue** button in the task pane, see [the end of the
+    article](#if-something-goes-wrong).
+
 The Word add-in has two dictation modes. In **Dictate**, what you say becomes report text. In
 **Command**, you say not the text but **what to do with the document** — move a paragraph, cut a
 sentence, insert an organ's normal finding — and the document changes on its own.
@@ -110,7 +120,9 @@ full. And it does not swallow what you typed beforehand.
 
 ## What command mode cannot do yet
 
-Better to read this now than to conclude something is broken later.
+Better to read this now than to conclude something is broken later. The list of known limits is
+not the list of all of them: the mode is a preview, and some of its defects we find together
+with you.
 
 - **For seven organs the normal-finding insertion is switched off on purpose.** The data
   labelling for them in the corpus is wrong, and instead of a plausible-looking wrong paragraph

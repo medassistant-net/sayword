@@ -49,7 +49,11 @@ answer is immediate, with no trip to the AI at all.
   wrong, and instead of a plausible-looking wrong paragraph the system explains what is wrong
   and what to do instead.
 
-## Command mode — in the Word add-in
+## Command mode — in the Word add-in (preview)
+
+The mode is open as an **early preview**: it works, but not always — some commands behave
+differently from what is described, and some come back with an error. Use it and report problems
+with the "Report an issue" button; the phrasings and the behaviour will change.
 
 The add-in now has a **Dictate / Command** switch. In command mode the doctor speaks not text
 but an instruction about the document:
