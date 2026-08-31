@@ -2,6 +2,16 @@
 
 **2026-08-29**
 
+!!! warning "Early preview"
+
+    Command mode is open as a preview. It works, but not always: some commands behave
+    differently from what is described below, and some come back with an error. We keep it open
+    precisely so that you run into that and tell us — real dictated commands show what ours
+    never do. The phrasings and the behaviour will change.
+
+    Report a problem with the **Report an issue** button in the task pane, see [the end of the
+    article](#if-something-goes-wrong).
+
 The Word add-in has two dictation modes. In **Dictate**, what you say becomes report text. In
 **Command**, you say not the text but **what to do with the document** — move a paragraph, cut a
 sentence, insert an organ's normal finding — and the document changes on its own.
@@ -10,11 +20,15 @@ sentence, insert an organ's normal finding — and the document changes on its o
 
 Next to the record button there is a switch: **Dictate** and **Command**.
 
+![The sayword.ai task pane in Word: the Dictate / Command switch, with Command selected](../assets/images/word-addin/command-mode-toggle.png)
+
 1. Switch to Command **before** you start recording — the switch is locked while recording, so
    it cannot cut off what you have already said.
 2. Press record and speak the command in your normal voice.
 3. Stop talking. After a couple of seconds the command runs; a countdown on screen says
    "Running the command in N s — keep talking to add to it."
+
+![Recording in progress: the live transcription shows the utterance «Разверни описание», with the countdown to running the command below it; on the left, the selected fragment in the document it applies to](../assets/images/word-addin/command-mode-countdown.png)
 
 That last point matters more than it looks. The pause is not a patience timer but a way to
 extend what you said: while you speak, the countdown resets. Change your mind halfway through —
@@ -110,7 +124,9 @@ full. And it does not swallow what you typed beforehand.
 
 ## What command mode cannot do yet
 
-Better to read this now than to conclude something is broken later.
+Better to read this now than to conclude something is broken later. The list of known limits is
+not the list of all of them: the mode is a preview, and some of its defects we find together
+with you.
 
 - **For seven organs the normal-finding insertion is switched off on purpose.** The data
   labelling for them in the corpus is wrong, and instead of a plausible-looking wrong paragraph
@@ -148,9 +164,11 @@ paragraph you find a week later.
 
 ## About the "provisional wording" badge
 
-Wherever inserted text came from the corpus, you will see a badge: **provisional wording, not
-confirmed by a radiologist**. The corpus was selected automatically, and no anatomical area has
-been signed off by a doctor yet. As doctors work through the base, the badge will disappear area
+When inserted text comes from the corpus, a badge appears in the task pane: **provisional
+wording, not confirmed by a radiologist**. The corpus was selected automatically, and no
+anatomical area has been signed off by a doctor yet.
+
+![The task pane showing a red badge, «Черновая формулировка — не подтверждена врачом», below the recording status line](../assets/images/word-addin/command-mode-provisional-badge.png) As doctors work through the base, the badge will disappear area
 by area — with no app update.
 
 And the rule that changes neither with the mode nor with the version: **responsibility for the
@@ -163,8 +181,11 @@ The task pane has a **Report an issue** button — use it rather than your memor
 after a command that misfired, it attaches the recognised fragment and the last minute of audio,
 so we can see what you actually said.
 
+![The Report an issue dialog: a choice of reasons, a comment field, the attached minute of audio, and the list of what is sent with the report](../assets/images/word-addin/report-issue-dialog.png)
+
 One thing it needs from you. What gets attached is what you **said**, not what the system did
-with it. So add a line in the comment field about what you expected and what happened: "expected
+with it — the dialog header will say the report is about dictation even when you are reporting a
+command that misfired. So add a line in the comment field about what you expected and what happened: "expected
 the last sentence to be deleted — the whole paragraph was rewritten." Two lines are enough, and
 they are what turns a report into a fixable defect.
 
