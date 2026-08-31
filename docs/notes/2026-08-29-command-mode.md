@@ -20,7 +20,7 @@ sentence, insert an organ's normal finding — and the document changes on its o
 
 Next to the record button there is a switch: **Dictate** and **Command**.
 
-![The sayword.ai task pane in Word: the Dictate / Command switch, with Command selected](../assets/images/word-addin/command-mode-toggle.png)
+![The sayword.ai task pane in Word: the Dictate / Command switch, with Command selected](../assets/images/word-addin/command-mode-toggle.png){ .half }
 
 1. Switch to Command **before** you start recording — the switch is locked while recording, so
    it cannot cut off what you have already said.
@@ -28,7 +28,7 @@ Next to the record button there is a switch: **Dictate** and **Command**.
 3. Stop talking. After a couple of seconds the command runs; a countdown on screen says
    "Running the command in N s — keep talking to add to it."
 
-![Recording in progress: the live transcription shows the utterance «Разверни описание», with the countdown to running the command below it; on the left, the selected fragment in the document it applies to](../assets/images/word-addin/command-mode-countdown.png)
+![Recording in progress: the live transcription shows the utterance «Разверни описание», with the countdown to running the command below it; on the left, the selected fragment in the document it applies to](../assets/images/word-addin/command-mode-countdown.png){ .half }
 
 That last point matters more than it looks. The pause is not a patience timer but a way to
 extend what you said: while you speak, the countdown resets. Change your mind halfway through —
@@ -168,7 +168,7 @@ When inserted text comes from the corpus, a badge appears in the task pane: **pr
 wording, not confirmed by a radiologist**. The corpus was selected automatically, and no
 anatomical area has been signed off by a doctor yet.
 
-![The task pane showing a red badge, «Черновая формулировка — не подтверждена врачом», below the recording status line](../assets/images/word-addin/command-mode-provisional-badge.png) As doctors work through the base, the badge will disappear area
+![The task pane showing a red badge, «Черновая формулировка — не подтверждена врачом», below the recording status line](../assets/images/word-addin/command-mode-provisional-badge.png){ .half } As doctors work through the base, the badge will disappear area
 by area — with no app update.
 
 And the rule that changes neither with the mode nor with the version: **responsibility for the
@@ -181,7 +181,7 @@ The task pane has a **Report an issue** button — use it rather than your memor
 after a command that misfired, it attaches the recognised fragment and the last minute of audio,
 so we can see what you actually said.
 
-![The Report an issue dialog: a choice of reasons, a comment field, the attached minute of audio, and the list of what is sent with the report](../assets/images/word-addin/report-issue-dialog.png)
+![The Report an issue dialog: a choice of reasons, a comment field, the attached minute of audio, and the list of what is sent with the report](../assets/images/word-addin/report-issue-dialog.png){ .half }
 
 One thing it needs from you. What gets attached is what you **said**, not what the system did
 with it — the dialog header will say the report is about dictation even when you are reporting a

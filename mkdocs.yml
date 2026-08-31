@@ -46,6 +46,7 @@ plugins:
 
 markdown_extensions:
   - admonition
+  - attr_list
   - pymdownx.superfences
   - pymdownx.tabbed
   - toc:
@@ -53,3 +54,6 @@ markdown_extensions:
       slugify: !!python/object/apply:pymdownx.slugs.slugify
         kwds:
           case: lower
+
+extra_css:
+  - assets/stylesheets/extra.css

@@ -1,0 +1,15 @@
+/* Screenshots of the add-in task pane are tall and narrow; at full column
+   width they dominate the page. `.half` pins them all to the same width —
+   half the text column — so a run of shots reads as one set regardless of
+   each image's own pixel size. Below the Material breakpoint a phone has no
+   column to spare, so they go back to full width. */
+.md-typeset img.half {
+  width: 50%;
+  display: block;
+}
+
+@media screen and (max-width: 44.9375em) {
+  .md-typeset img.half {
+    width: 100%;
+  }
+}
