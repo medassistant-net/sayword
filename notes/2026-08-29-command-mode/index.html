@@ -1,0 +1,913 @@
+<!DOCTYPE html><html lang="en" class="no-js"><head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://medassistant-net.github.io/sayword/notes/2026-08-29-command-mode/">
+      
+      
+      
+      
+        
+          <link rel="alternate" href="./" hreflang="en">
+        
+          <link rel="alternate" href="../../ru/notes/2026-08-29-command-mode/" hreflang="ru">
+        
+      
+      
+        <link rel="alternate" type="application/rss+xml" title="RSS feed" href="../../feed_rss_created.xml">
+        <link rel="alternate" type="application/rss+xml" title="RSS feed of updated content" href="../../feed_rss_updated.xml">
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>Command Mode: Your Voice Can Now Edit, Not Just Dictate - Sayword Dev Blog</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  <link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"><script src="../../assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
+            html.glightbox-open { overflow: initial; height: 100%; }
+            .gslide-title { margin-top: 0px; user-select: text; }
+            .gslide-desc { color: #666; user-select: text; }
+            .gslide-image img { background: white; }
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color); }
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
+        </style></head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#command-mode-your-voice-can-now-edit-not-just-dictate" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Sayword Dev Blog" class="md-header__button md-logo" aria-label="Sayword Dev Blog" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Sayword Dev Blog
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Command Mode: Your Voice Can Now Edit, Not Just Dictate
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo" aria-label="Switch to dark mode" type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden="">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"></path></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo" aria-label="Switch to light mode" type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden="">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"></path></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+      <div class="md-header__option">
+  <div class="md-select">
+    
+    <button class="md-header__button md-icon" aria-label="Select language">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12.87 15.07-2.54-2.51.03-.03A17.5 17.5 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11zM18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2zm-2.62 7 1.62-4.33L19.12 17z"></path></svg>
+    </button>
+    <div class="md-select__inner">
+      <ul class="md-select__list">
+        
+          <li class="md-select__item">
+            <a href="./" hreflang="en" class="md-select__link">
+              English
+            </a>
+          </li>
+        
+          <li class="md-select__item">
+            <a href="../../ru/notes/2026-08-29-command-mode/" hreflang="ru" class="md-select__link">
+              Русский
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</div>
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required="">
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix="">
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/medassistant-net/sayword" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"></path></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../changelog/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Changelog
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../howtos/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  How-tos
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Notes
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Sayword Dev Blog" class="md-nav__button md-logo" aria-label="Sayword Dev Blog" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg>
+
+    </a>
+    Sayword Dev Blog
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/medassistant-net/sayword" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"></path></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix="">
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../changelog/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Changelog
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../howtos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    How-tos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Notes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+      
+        <li class="md-nav__item">
+  <a href="#turning-it-on" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Turning it on
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-you-can-say" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What you can say
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="What you can say">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#insert-an-organs-normal-finding" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Insert an organ's normal finding
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#transform-the-selection" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Transform the selection
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reorder" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Reorder
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#delete-a-fragment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Delete a fragment
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fix-a-fragment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fix a fragment
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#change-the-formatting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Change the formatting
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ct-and-mri-which-base-of-wordings-is-used" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CT and MRI: which base of wordings is used
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#five-rules-worth-knowing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Five rules worth knowing
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-command-mode-cannot-do-yet" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What command mode cannot do yet
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-it-rests-on" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What it rests on
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#about-the-provisional-wording-badge" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        About the "provisional wording" badge
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#if-something-goes-wrong" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        If something goes wrong
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="command-mode-your-voice-can-now-edit-not-just-dictate">Command Mode: Your Voice Can Now Edit, Not Just Dictate<a class="headerlink" href="#command-mode-your-voice-can-now-edit-not-just-dictate" title="Permanent link">¶</a></h1>
+<p><strong>2026-08-29</strong></p>
+<div class="admonition warning">
+<p class="admonition-title">Early preview</p>
+<p>Command mode is open as a preview. It works, but not always: some commands behave
+differently from what is described below, and some come back with an error. We keep it open
+precisely so that you run into that and tell us — real dictated commands show what ours
+never do. The phrasings and the behaviour will change.</p>
+<p>Report a problem with the <strong>Report an issue</strong> button in the task pane, see <a href="#if-something-goes-wrong">the end of the
+article</a>.</p>
+</div>
+<p>The Word add-in has two dictation modes. In <strong>Dictate</strong>, what you say becomes report text. In
+<strong>Command</strong>, you say not the text but <strong>what to do with the document</strong> — move a paragraph, cut a
+sentence, insert an organ's normal finding — and the document changes on its own.</p>
+<h2 id="turning-it-on">Turning it on<a class="headerlink" href="#turning-it-on" title="Permanent link">¶</a></h2>
+<p>Next to the record button there is a switch: <strong>Dictate</strong> and <strong>Command</strong>.</p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../assets/images/word-addin/command-mode-toggle.png" data-desc-position="bottom"><img alt="The sayword.ai task pane in Word: the Dictate / Command switch, with Command selected" class="half" src="../../assets/images/word-addin/command-mode-toggle.png"></a></p>
+<ol>
+<li>Switch to Command <strong>before</strong> you start recording — the switch is locked while recording, so
+   it cannot cut off what you have already said.</li>
+<li>Press record and speak the command in your normal voice.</li>
+<li>Stop talking. After a couple of seconds the command runs; a countdown on screen says
+   "Running the command in N s — keep talking to add to it."</li>
+</ol>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../assets/images/word-addin/command-mode-countdown.png" data-desc-position="bottom"><img alt="Recording in progress: the live transcription shows the utterance «Разверни описание», with the countdown to running the command below it; on the left, the selected fragment in the document it applies to" class="half" src="../../assets/images/word-addin/command-mode-countdown.png"></a></p>
+<p>That last point matters more than it looks. The pause is not a patience timer but a way to
+extend what you said: while you speak, the countdown resets. Change your mind halfway through —
+finish the sentence, and the system hears the whole thing.</p>
+<p>If the command is about a specific piece of text, <strong>select it first</strong>. Almost every rule below
+rests on the selection.</p>
+<h2 id="what-you-can-say">What you can say<a class="headerlink" href="#what-you-can-say" title="Permanent link">¶</a></h2>
+<h3 id="insert-an-organs-normal-finding">Insert an organ's normal finding<a class="headerlink" href="#insert-an-organs-normal-finding" title="Permanent link">¶</a></h3>
+<blockquote>
+<p>"insert spleen, normal" · "add adrenals, normal" · "write in bronchi, normal"</p>
+</blockquote>
+<p>The most frequent command, and the fastest one: a ready-made wording is inserted, taken from the
+corpus of reports — the one that dozens of descriptions agree on almost word for word. Nothing
+is composed on the spot, and the answer is immediate.</p>
+<p>Say it however it comes out. Russian case endings and the ё/е spelling difference are all
+understood the same way. Politeness — "insert the spleen normal here, please" — does not get in
+the way.</p>
+<h3 id="transform-the-selection">Transform the selection<a class="headerlink" href="#transform-the-selection" title="Permanent link">¶</a></h3>
+<blockquote>
+<p>"format this" · "tidy it up" · "shorten" · "expand" · "rephrase"</p>
+</blockquote>
+<p>A broadly worded request is fine. If your words make it clear what to do, the system does it
+rather than asking. "Format this" over a selected paragraph means "bring it to the style
+accepted for this area, losing nothing."</p>
+<h3 id="reorder">Reorder<a class="headerlink" href="#reorder" title="Permanent link">¶</a></h3>
+<blockquote>
+<p>"swap the first and last paragraphs" · "put these in order"</p>
+</blockquote>
+<p>The order changes; the content does not.</p>
+<h3 id="delete-a-fragment">Delete a fragment<a class="headerlink" href="#delete-a-fragment" title="Permanent link">¶</a></h3>
+<blockquote>
+<p>"delete the last sentence" · "drop the bit about the kidneys"</p>
+</blockquote>
+<h3 id="fix-a-fragment">Fix a fragment<a class="headerlink" href="#fix-a-fragment" title="Permanent link">¶</a></h3>
+<blockquote>
+<p>"correct the previous sentence"</p>
+</blockquote>
+<h3 id="change-the-formatting">Change the formatting<a class="headerlink" href="#change-the-formatting" title="Permanent link">¶</a></h3>
+<blockquote>
+<p>"remove the italics in the first paragraph" · "make this bold"</p>
+</blockquote>
+<p>This is the only case where the system may change markup — when you explicitly ask. Everywhere
+else it preserves it.</p>
+<h2 id="ct-and-mri-which-base-of-wordings-is-used">CT and MRI: which base of wordings is used<a class="headerlink" href="#ct-and-mri-which-base-of-wordings-is-used" title="Permanent link">¶</a></h2>
+<p>The ready-made wordings live in two separate bases, one for CT and one for MRI. A normal finding
+reads differently in each, and substituting one for the other is not acceptable. Which base to
+use is decided automatically, in this order:</p>
+<ol>
+<li><strong>The modality chosen in settings.</strong> A radiologist usually works one modality, and choosing
+   it once is the most reliable option: every command is then unambiguous, including on an empty,
+   freshly opened document. A modality selector is coming to the app's settings; until then,
+   write to us and we will set it for your connection.</li>
+<li><strong>The modality named in the report text.</strong> With nothing set, the system reads the document you
+   are working in.</li>
+<li><strong>With nothing to go on, the fast substitution does not run</strong> and the command takes the long
+   road: slower, but not a guess. That happens on an empty document, or when the text mentions
+   both modalities — a comparison with a prior study of the other kind, say. The system will not
+   choose in that situation.</li>
+</ol>
+<h2 id="five-rules-worth-knowing">Five rules worth knowing<a class="headerlink" href="#five-rules-worth-knowing" title="Permanent link">¶</a></h2>
+<p>These are not about the interface but about how the system reasons. Knowing them, you will phrase
+commands more precisely — and understand why you sometimes get a question instead of an action.</p>
+<p><strong>1. "The first paragraph" means the first of the selected ones.</strong> Not the first in the
+document. You made a selection precisely in order to talk about it. With no selection and a
+positional reference, the system asks rather than guessing across the whole document.</p>
+<p><strong>2. The smallest necessary thing is touched.</strong> Ask to delete one sentence inside a selected
+paragraph and the sentence goes, rather than the paragraph being rewritten. Rewriting a whole to
+fix a part means needlessly running text you did not ask to change through the system. The
+smaller the blast radius, the less can go wrong.</p>
+<p><strong>3. Wording changes, content does not.</strong> In any transformation of a selection, every finding,
+every organ and every measurement must survive. If the request could only be carried out by
+adding or dropping a fact, the system asks. This is its central prohibition.</p>
+<p><strong>4. Markup comes back as it went in.</strong> An organ label that was bold returns bold. Flat text in
+answer to marked-up text is the same kind of loss as a dropped measurement, only less immediately
+visible.</p>
+<p><strong>5. One command, one undo.</strong> Ctrl+Z returns the document to its state before the command, in
+full. And it does not swallow what you typed beforehand.</p>
+<h2 id="what-command-mode-cannot-do-yet">What command mode cannot do yet<a class="headerlink" href="#what-command-mode-cannot-do-yet" title="Permanent link">¶</a></h2>
+<p>Better to read this now than to conclude something is broken later. The list of known limits is
+not the list of all of them: the mode is a preview, and some of its defects we find together
+with you.</p>
+<ul>
+<li><strong>For seven organs the normal-finding insertion is switched off on purpose.</strong> The data
+  labelling for them in the corpus is wrong, and instead of a plausible-looking wrong paragraph
+  the system explains what the problem is. "Insert liver, normal" answers with a refusal and an
+  explanation rather than pasting someone else's text. This gets fixed on the corpus side, not
+  in the app.</li>
+<li><strong>A repeated fragment is refused.</strong> If what you ask to delete or fix occurs twice in the
+  document ("not enlarged", "unremarkable"), the system will not guess which one. Select the
+  right spot and repeat.</li>
+<li><strong>A positional reference with no selection gets a question.</strong> See rule 1.</li>
+<li><strong>Two requests in one utterance</strong> ("add spleen normal and format the rest") are both carried
+  out, but more slowly: the fast substitution is not built for that, and the whole utterance
+  takes the long road.</li>
+<li><strong>The web editor and the desktop app are coming.</strong> In the desktop app command mode will be
+  insert-only: by design it does not read the document you are working in, and that constraint
+  stays.</li>
+</ul>
+<h2 id="what-it-rests-on">What it rests on<a class="headerlink" href="#what-it-rests-on" title="Permanent link">¶</a></h2>
+<p>Three things explain almost all of command mode's behaviour.</p>
+<p><strong>The wordings live in a corpus of reports, not inside the program.</strong> That is why they are shared
+across all our applications and can be extended without updating the add-in: as the corpus grows,
+"insert <organ>, normal" starts answering where there was nothing to answer with. Today 80
+area-and-organ combinations out of 120 are covered in the CT base, and 62 out of 75 in the MRI
+base.</organ></p>
+<p><strong>Inserting a normal finding is substitution, not composition.</strong> The ready text is taken from the
+corpus as it stands, which is why it arrives instantly. Everything else — transformations,
+deletions, reordering — requires understanding the utterance and takes a few seconds.</p>
+<p><strong>A refusal beats a silent mistake.</strong> A command it cannot resolve is not guessed at: the system
+asks, and says what exactly is unclear. You see a refusal immediately; a quietly mangled
+paragraph you find a week later.</p>
+<h2 id="about-the-provisional-wording-badge">About the "provisional wording" badge<a class="headerlink" href="#about-the-provisional-wording-badge" title="Permanent link">¶</a></h2>
+<p>When inserted text comes from the corpus, a badge appears in the task pane: <strong>provisional
+wording, not confirmed by a radiologist</strong>. The corpus was selected automatically, and no
+anatomical area has been signed off by a doctor yet.</p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../assets/images/word-addin/command-mode-provisional-badge.png" data-desc-position="bottom"><img alt="The task pane showing a red badge, «Черновая формулировка — не подтверждена врачом», below the recording status line" class="half" src="../../assets/images/word-addin/command-mode-provisional-badge.png"></a> As doctors work through the base, the badge will disappear area
+by area — with no app update.</p>
+<p>And the rule that changes neither with the mode nor with the version: <strong>responsibility for the
+content of the report stays with the doctor.</strong> The system prepares the text; the doctor signs
+it.</p>
+<h2 id="if-something-goes-wrong">If something goes wrong<a class="headerlink" href="#if-something-goes-wrong" title="Permanent link">¶</a></h2>
+<p>The task pane has a <strong>Report an issue</strong> button — use it rather than your memory: pressed right
+after a command that misfired, it attaches the recognised fragment and the last minute of audio,
+so we can see what you actually said.</p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../assets/images/word-addin/report-issue-dialog.png" data-desc-position="bottom"><img alt="The Report an issue dialog: a choice of reasons, a comment field, the attached minute of audio, and the list of what is sent with the report" class="half" src="../../assets/images/word-addin/report-issue-dialog.png"></a></p>
+<p>One thing it needs from you. What gets attached is what you <strong>said</strong>, not what the system did
+with it — the dialog header will say the report is about dictation even when you are reporting a
+command that misfired. So add a line in the comment field about what you expected and what happened: "expected
+the last sentence to be deleted — the whole paragraph was rewritten." Two lines are enough, and
+they are what turns a report into a fixable defect.</p>
+<p>A command that was refused where it should have worked is the most useful thing you can send us.
+If email is easier: <a href="mailto:saywordai@gmail.com">saywordai@gmail.com</a>.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden="">
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"></path></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.top", "search.suggest", "content.code.copy"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  
+<script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(()=>{ lightbox.reload(); });
+</script></body></html>
