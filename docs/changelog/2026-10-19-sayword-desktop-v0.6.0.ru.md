@@ -31,6 +31,12 @@ macOS надёжной.
 Установщики для Windows (x64 и x86) пока без подписи кода — Windows SmartScreen покажет
 предупреждение при запуске: выберите **Подробнее → Всё равно выполнить**.
 
-[Скачать v0.6.0](https://github.com/medassistant-net/sayword/releases/tag/desktop-v0.6.0)
+**Скачать v0.6.0:**
+
+- macOS (Intel и Apple Silicon): [sayword_0.6.0_universal.dmg](https://github.com/medassistant-net/sayword/releases/download/desktop-v0.6.0/sayword_0.6.0_universal.dmg)
+- Windows, 64-бит (большинство компьютеров): [sayword_0.6.0_x64-setup.exe](https://github.com/medassistant-net/sayword/releases/download/desktop-v0.6.0/sayword_0.6.0_x64-setup.exe)
+- Windows, 32-бит: [sayword_0.6.0_x86-setup.exe](https://github.com/medassistant-net/sayword/releases/download/desktop-v0.6.0/sayword_0.6.0_x86-setup.exe)
+
+[Страница релиза](https://github.com/medassistant-net/sayword/releases/tag/desktop-v0.6.0)
 
 Обратная связь: [saywordai@gmail.com](mailto:saywordai@gmail.com).
