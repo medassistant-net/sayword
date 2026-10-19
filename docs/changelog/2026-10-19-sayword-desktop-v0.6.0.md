@@ -29,6 +29,12 @@ The macOS build is signed and notarized by Apple (universal DMG, Intel + Apple S
 Windows installers (x64 and x86) are not yet code-signed — Windows SmartScreen will warn on
 launch: choose **More info → Run anyway**.
 
-[Download v0.6.0](https://github.com/medassistant-net/sayword/releases/tag/desktop-v0.6.0)
+**Download v0.6.0:**
+
+- macOS (Intel and Apple Silicon): [sayword_0.6.0_universal.dmg](https://github.com/medassistant-net/sayword/releases/download/desktop-v0.6.0/sayword_0.6.0_universal.dmg)
+- Windows, 64-bit (most computers): [sayword_0.6.0_x64-setup.exe](https://github.com/medassistant-net/sayword/releases/download/desktop-v0.6.0/sayword_0.6.0_x64-setup.exe)
+- Windows, 32-bit: [sayword_0.6.0_x86-setup.exe](https://github.com/medassistant-net/sayword/releases/download/desktop-v0.6.0/sayword_0.6.0_x86-setup.exe)
+
+[Release page](https://github.com/medassistant-net/sayword/releases/tag/desktop-v0.6.0)
 
 Feedback: [saywordai@gmail.com](mailto:saywordai@gmail.com).
